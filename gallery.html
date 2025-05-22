@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAAS - Gallery</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="gallery.css">
+</head>
+<body>
+    <div class="loader">
+        <div class="loader-inner">
+            <div class="loader-circle"></div>
+            <div class="loader-text">Loading Media...</div>
+        </div>
+    </div>
+    
+    <header class="header">
+        <div class="container">
+        <a href="index.html" class="logo-link">
+            <div class="logo">
+                <span class="logo-text">SAAS</span>
+                <span class="logo-subtext">Sahas Adventure and Allied Sports</span>
+            </div>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="gallery.html" class="nav-link active">Gallery</a></li>
+                    <li class="nav-item"><a href="events.html" class="nav-link">Events</a></li>
+                    <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="gallery-hero">
+            <div class="container">
+                <h1 class="gallery-title">Our Adventure Gallery</h1>
+                <p class="gallery-subtitle">Capturing the spirit of adventure in every frame</p>
+            </div>
+            <div class="hero-overlay"></div>
+        </section>
+
+        <section class="gallery-section">
+            <div class="container">
+                <div class="gallery-filter">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="trekking">Trekking</button>
+                    <button class="filter-btn" data-filter="camping">Camping</button>
+                    <button class="filter-btn" data-filter="climbing">Climbing</button>
+                    <button class="filter-btn" data-filter="rappelling">Rappelling</button>
+                    <button class="filter-btn" data-filter="team">Team</button>
+                </div>
+
+                <div class="gallery-grid">
+                    <!-- Trekking Images -->
+                    <div class="gallery-item trekking" data-category="trekking">
+                        <img src="https://images.unsplash.com/photo-1501554728187-ce583db33af7?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Mountain Trekking">
+                        <div class="item-overlay">
+                            <div class="overlay-content">
+                                <h3>Himalayan Trek</h3>
+                                <p>2023 Summer Expedition</p>
+                                <div class="zoom-icon"><i class="fas fa-search-plus"></i></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item trekking" data-category="trekking">
+                        <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Group Trekking">
+                        <div class="item-overlay">
+                            <div class="overlay-content">
+                                <h3>Valley Crossing</h3>
+                                <p>Monsoon Special Trek</p>
+                                <div class="zoom-icon"><i class="fas fa-search-plus"></i></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Camping Images -->
+                    <div class="gallery-item camping" data-category="camping">
+                        <img src="https://images.unsplash.com/photo-1487730116645-74489c95b41b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Night Camping">
+                        <div class="item-overlay">
+                            <div class="overlay-content">
+                                <h3>Starry Night Camp</h3>
+                                <p>Winter Camping 2023</p>
+                                <div class="zoom-icon"><i class="fas fa-search-plus"></i></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item camping" data-category="camping">
+                        <img src="https://images.unsplash.com/photo-1537905569824-f89f14cceb68?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Tent Setup">
+                        <div class="item-overlay">
+                            <div class="overlay-content">
+                                <h3>Base Camp Setup</h3>
+                                <p>Advanced Camping Workshop</p>
+                                <div class="zoom-icon"><i class="fas fa-search-plus"></i></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Climbing Images -->
+                    <div class="gallery-item climbing" data-category="climbing">
+                        <img src="https://images.unsplash.com/photo-1518604666860-9ed391f76460?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Rock Climbing">
+                        <div class="item-overlay">
+                            <div class="overlay-content">
+                                <h3>Rock Face Challenge</h3>
+                                <p>Advanced Climbing Course</p>
+                                <div class="zoom-icon"><i class="fas fa-search-plus"></i></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item climbing" data-category="climbing">
+                        <img src="https://images.unsplash.com/photo-1506535995048-638aa1b62b77?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Mountain Climbing">
+                        <div class="item-overlay">
+                            <div class="overlay-content">
+                                <h3>Summit Ascent</h3>
+                                <p>Winter Climbing Expedition</p>
+                                <div class="zoom-icon"><i class="fas fa-search-plus"></i></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Rappelling Images -->
+                    <div class="gallery-item rappelling" data-category="rappelling">
+                        <img src="https://images.unsplash.com/photo-1511994298241-608e28f14fde?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Waterfall Rappelling">
+                        <div class="item-overlay">
+                            <div class="overlay-content">
+                                <h3>Waterfall Descent</h3>
+                                <p>Monsoon Adventure Special</p>
+                                <div class="zoom-icon"><i class="fas fa-search-plus"></i></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item rappelling" data-category="rappelling">
+                        <img src="https://images.unsplash.com/photo-1522163182402-834f871fd851?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Cliff Rappelling">
+                        <div class="item-overlay">
+                            <div class="overlay-content">
+                                <h3>Cliff Challenge</h3>
+                                <p>Advanced Rappelling Workshop</p>
+                                <div class="zoom-icon"><i class="fas fa-search-plus"></i></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Team Images -->
+                    <div class="gallery-item team" data-category="team">
+                        <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="SAAS Team">
+                        <div class="item-overlay">
+                            <div class="overlay-content">
+                                <h3>Our Expert Guides</h3>
+                                <p>SAAS Core Team 2023</p>
+                                <div class="zoom-icon"><i class="fas fa-search-plus"></i></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item team" data-category="team">
+                        <img src="https://images.unsplash.com/photo-1470114716159-e389f8712fda?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Group Photo">
+                        <div class="item-overlay">
+                            <div class="overlay-content">
+                                <h3>Adventure Buddies</h3>
+                                <p>Summer Trek Participants</p>
+                                <div class="zoom-icon"><i class="fas fa-search-plus"></i></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Additional Images -->
+                    <div class="gallery-item trekking" data-category="trekking">
+                        <img src="https://images.unsplash.com/photo-1504851149312-7a075b496cc7?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Snow Trek">
+                        <div class="item-overlay">
+                            <div class="overlay-content">
+                                <h3>Snowy Peaks</h3>
+                                <p>Winter Trek 2022</p>
+                                <div class="zoom-icon"><i class="fas fa-search-plus"></i></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item camping" data-category="camping">
+                        <img src="https://images.unsplash.com/photo-1452421822248-d4c2b47f0c81?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Desert Camp">
+                        <div class="item-overlay">
+                            <div class="overlay-content">
+                                <h3>Desert Nights</h3>
+                                <p>Thar Desert Expedition</p>
+                                <div class="zoom-icon"><i class="fas fa-search-plus"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-load-more">
+                    <button class="btn btn-primary">Load More Adventures</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lightbox Modal -->
+        <div class="lightbox-modal">
+            <div class="lightbox-content">
+                <span class="lightbox-close">&times;</span>
+                <img class="lightbox-image" src="" alt="">
+                <div class="lightbox-caption">
+                    <h3 class="caption-title"></h3>
+                    <p class="caption-text"></p>
+                </div>
+                <div class="lightbox-nav">
+                    <button class="lightbox-prev"><i class="fas fa-chevron-left"></i></button>
+                    <button class="lightbox-next"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="logo-text">SAAS</span>
+                    <span class="logo-subtext">Summit Adventures & Alpine Sports</span>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="events.html">Events</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h3>Follow Us</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 SAAS Trekking. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="gallery.js"></script>
+</body>
+</html>
