@@ -46,114 +46,55 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Infinite Horizontal Scroller Functionality
-    function initInfiniteScroller() {
-        const scroller = document.querySelector('.activities-scroller');
+    // Manual Scroller with Arrows
+    function initManualScroller() {
         const track = document.querySelector('.scroller-track');
-        const items = document.querySelectorAll('.scroller-item');
-        
-        if (!scroller || !track || items.length === 0) return;
-        
-        const itemWidth = items[0].offsetWidth + 20; // width + gap
-        let isDragging = false;
-        let startX, scrollLeft;
-        let animationId;
-        let targetScroll = 0;
-        let currentScroll = 0;
-        const ease = 0.1;
-        
-        // Handle mouse events
-        scroller.addEventListener('mousedown', (e) => {
-            isDragging = true;
-            startX = e.pageX - scroller.offsetLeft;
-            scrollLeft = currentScroll;
-            scroller.style.cursor = 'grabbing';
-            cancelAnimationFrame(animationId);
-        });
-        
-        scroller.addEventListener('mousemove', (e) => {
-            if (!isDragging) return;
-            e.preventDefault();
-            const x = e.pageX - scroller.offsetLeft;
-            const walk = (x - startX) * 2; // Scroll-fastness
-            targetScroll = scrollLeft - walk;
-        });
-        
-        scroller.addEventListener('mouseup', () => {
-            isDragging = false;
-            scroller.style.cursor = 'grab';
-            animateScroll();
-        });
-        
-        scroller.addEventListener('mouseleave', () => {
-            isDragging = false;
-            scroller.style.cursor = 'grab';
-            animateScroll();
-        });
-        
-        // Touch events for mobile
-        scroller.addEventListener('touchstart', (e) => {
-            isDragging = true;
-            startX = e.touches[0].pageX - scroller.offsetLeft;
-            scrollLeft = currentScroll;
-            cancelAnimationFrame(animationId);
-        });
-        
-        scroller.addEventListener('touchmove', (e) => {
-            if (!isDragging) return;
-            const x = e.touches[0].pageX - scroller.offsetLeft;
-            const walk = (x - startX) * 2;
-            targetScroll = scrollLeft - walk;
-        });
-        
-        scroller.addEventListener('touchend', () => {
-            isDragging = false;
-            animateScroll();
-        });
-        
-        // Navigation buttons
         const btnLeft = document.querySelector('.scroller-btn-left');
         const btnRight = document.querySelector('.scroller-btn-right');
+        const items = document.querySelectorAll('.scroller-item');
         
-        if (btnLeft && btnRight) {
-            btnRight.addEventListener('click', () => {
-                targetScroll += itemWidth * 3;
-                animateScroll();
-            });
-            
-            btnLeft.addEventListener('click', () => {
-                targetScroll -= itemWidth * 3;
-                animateScroll();
-            });
-        }
+        if (!track || !btnLeft || !btnRight || items.length === 0) return;
         
-        // Smooth scroll animation
-        function animateScroll() {
-            const diff = targetScroll - currentScroll;
-            currentScroll += diff * ease;
+        const itemWidth = items[0].offsetWidth + 20; // width + gap
+        
+        btnRight.addEventListener('click', () => {
+            track.scrollBy({
+                left: itemWidth * 2, // Scroll 2 items at a time
+                behavior: 'smooth'
+            });
+        });
+        
+        btnLeft.addEventListener('click', () => {
+            track.scrollBy({
+                left: -itemWidth * 2, // Scroll 2 items at a time
+                behavior: 'smooth'
+            });
+        });
+        
+        // Hide/show arrows based on scroll position
+        track.addEventListener('scroll', () => {
+            const maxScroll = track.scrollWidth - track.clientWidth;
             
-            // Check for infinite loop
-            const maxScroll = track.scrollWidth - scroller.offsetWidth;
-            
-            if (currentScroll >= maxScroll) {
-                currentScroll = 0;
-                targetScroll = 0;
-            } else if (currentScroll <= 0) {
-                currentScroll = maxScroll;
-                targetScroll = maxScroll;
+            if (track.scrollLeft <= 10) {
+                btnLeft.style.opacity = '0.5';
+                btnLeft.style.pointerEvents = 'none';
+            } else {
+                btnLeft.style.opacity = '1';
+                btnLeft.style.pointerEvents = 'auto';
             }
             
-            track.style.transform = `translateX(${-currentScroll}px)`;
-            animationId = requestAnimationFrame(animateScroll);
-        }
-        
-        // Initialize
-        scroller.style.cursor = 'grab';
-        animateScroll();
+            if (track.scrollLeft >= maxScroll - 10) {
+                btnRight.style.opacity = '0.5';
+                btnRight.style.pointerEvents = 'none';
+            } else {
+                btnRight.style.opacity = '1';
+                btnRight.style.pointerEvents = 'auto';
+            }
+        });
     }
     
     // Initialize the scroller
-    initInfiniteScroller();
+    initManualScroller();
     
     // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
