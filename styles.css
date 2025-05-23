@@ -331,21 +331,56 @@ body {
 }
 
 /* Activities Scroller */
-/* Activities Scroller - Updated */
+/* Activities Section */
+.activities {
+    padding: 80px 0;
+    background-color: var(--white);
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: var(--dark-color);
+    position: relative;
+    width: 100%;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+    border-radius: 2px;
+}
+
 .activities-scroller {
     position: relative;
     max-width: 1200px;
     margin: 0 auto;
-    overflow: hidden;
+    display: flex;
+    align-items: center;
+    gap: 15px;
 }
 
 .scroller-track {
     display: flex;
     gap: 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
     padding: 20px 0;
-    width: max-content;
-    will-change: transform;
-    transition: transform 0.5s ease-out;
+    width: 100%;
+}
+
+.scroller-track::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
 }
 
 .scroller-item {
@@ -356,7 +391,40 @@ body {
     position: relative;
     box-shadow: var(--box-shadow);
     transition: var(--transition);
-    user-select: none;
+    scroll-snap-align: start;
+}
+
+.scroller-btn {
+    background-color: var(--white);
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: var(--transition);
+    z-index: 1;
+    flex-shrink: 0;
+}
+
+.scroller-btn:hover {
+    background-color: var(--primary-color);
+    color: var(--white);
+    transform: scale(1.1);
+}
+
+.scroller-btn i {
+    font-size: 1.2rem;
+}
+
+/* Hide arrows on mobile */
+@media (max-width: 768px) {
+    .scroller-btn {
+        display: none;
+    }
 }
 
 .scroller-item:hover {
@@ -401,14 +469,7 @@ body {
     opacity: 0.9;
 }
 
-/* Hide scrollbar but keep functionality */
-.activities-scroller {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-}
-.activities-scroller::-webkit-scrollbar {
-    display: none;
-}
+
 /* Footer Styles */
 .footer {
     background-color: var(--dark-color);
