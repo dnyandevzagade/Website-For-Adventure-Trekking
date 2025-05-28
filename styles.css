@@ -1320,3 +1320,75 @@ body {
         padding: 30px 20px;
     }
 }
+
+
+
+
+/* Fix for contact section overflow issue on mobile */
+.contact-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.contact-info, .contact-form {
+  flex: 1 1 300px;
+  max-width: 100%;
+}
+
+@media (max-width: 768px) {
+  .contact-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-info, .contact-form {
+    width: 100%;
+  }
+}
+
+/* Prevent full-page scroll overflow */
+html, body {
+  overflow-x: hidden;
+}
+
+
+
+@media (max-width: 768px) {
+  .contact-content {
+    padding: 0 10px; /* Reduce side padding */
+  }
+
+  .contact-form,
+  .contact-info {
+    width: 100%;
+    padding: 25px 20px; /* Wider box content */
+    margin: 0 auto;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%;
+    font-size: 1rem;
+    padding: 14px;
+  }
+
+  .contact-info h4,
+  .contact-info p {
+    font-size: 1rem;
+    line-height: 1.6;
+    text-align: left;
+  }
+
+  .contact-form button {
+    width: 100%;
+    font-size: 1rem;
+    padding: 14px;
+  }
+}
