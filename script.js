@@ -162,4 +162,54 @@ document.addEventListener('DOMContentLoaded', function() {
     
     window.addEventListener('scroll', animateOnScroll);
     animateOnScroll(); // Run once on page load
+
+    // 🔽🔽🔽 ADDITIONS START 🔽🔽🔽
+
+    // Contact Form Submission
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            
+            // Simple validation
+            if (!name || !email || !message) {
+                alert('Please fill in all required fields');
+                return;
+            }
+            
+            // In a real implementation, you would send this data to your server
+            console.log('Form submitted:', { name, email, message });
+            
+            // Show success message
+            alert('Thank you for your message! We will get back to you soon.');
+            
+            // Reset form
+            contactForm.reset();
+        });
+    }
+
+    // Contact & About Section Animation
+    window.addEventListener('scroll', animateSectionsOnScroll);
+    animateSectionsOnScroll(); // Run once on page load
+
+    // 🔼🔼🔼 ADDITIONS END 🔼🔼🔼
 });
+
+// Function declared globally (outside DOMContentLoaded)
+function animateSectionsOnScroll() {
+    const elements = document.querySelectorAll('.about-section, .contact-section, .feature, .info-card');
+    
+    elements.forEach(element => {
+        const elementPosition = element.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+        
+        if (elementPosition < windowHeight - 100) {
+            element.classList.add('animated');
+        }
+    });
+}
