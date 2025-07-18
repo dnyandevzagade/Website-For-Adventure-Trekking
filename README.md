@@ -33,6 +33,21 @@ A fully responsive and interactive adventure-themed website built using HTML, CS
 └── /images
 ```
 
+SCREEN SHOTS 
+<img width="1919" height="1046" alt="image" src="https://github.com/user-attachments/assets/0f8a07be-9b3f-4873-b9f3-409e56c0e158" />
+<img width="1919" height="1027" alt="image" src="https://github.com/user-attachments/assets/98b0edb0-6e25-4ddf-b78d-89f6a8d8bd1b" />
+<img width="1919" height="1030" alt="image" src="https://github.com/user-attachments/assets/2afbeae4-2aa9-4ddc-b898-a47c1673cd55" />
+
+## 📚 Internship Details
+
+This project was developed as part of the **Task 1** during my internship at **CODTECH**.  
+Intern Name: **Dnyandev Rama Zagade**  
+Internship Duration: *Summer Internship 2025*  
+Project Title: *DEVELOP A STATIC WEBSITE FOR A
+DEVELOPER'S PORTFOLIO USING HTML,
+CSS, AND JAVASCRIPT.*
+
+
 ## 🚀 How to Run
 
 1. Download or clone the repository:
